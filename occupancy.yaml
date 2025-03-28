@@ -1,0 +1,4 @@
+name: occupancy
+channels:
+  - conda-forge
+prefix: /opt/conda/envs/occupancy
