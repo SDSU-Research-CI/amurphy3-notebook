@@ -25,4 +25,11 @@ COPY oscrtest.yaml oscrtest.yaml
 RUN mamba env create -f oscrtest.yaml \
  && rm oscrtest.yaml
 
+COPY install_oscr.R install_oscr.R
+RUN source activate base \
+ && conda activate oscrtest \
+ && Rscript install_oscr.R
+
+RUN rm -f install_oscr.R
+
 ENV PATH=/opt/globusconnectpersonal-3.2.6:$PATH
